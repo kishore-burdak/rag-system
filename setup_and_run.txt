@@ -1,0 +1,17 @@
+# 1. Create a Python virtual environment (only needed the first time)
+python3 -m venv venv
+
+# 2. Activate the virtual environment (needed every time you open a new terminal)
+source venv/bin/activate
+
+# 3. Clear pip cache if you run into disk space issues (optional)
+pip cache purge
+
+# 4. Install a lightweight CPU-only version of PyTorch first to save disk space
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# 5. Install the rest of the project requirements
+pip install -r requirements.txt --no-cache-dir
+
+# 6. Start the Streamlit Application (this will automatically start Ollama in the background)
+streamlit run app.py
